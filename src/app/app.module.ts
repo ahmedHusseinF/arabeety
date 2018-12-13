@@ -56,7 +56,11 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     MaterialModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    FirebaseUIModule.forRoot(firebaseUiAuthConfig)
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCK_sAwBaNCCN3VoX73y0ocaI0ezIgxeio',
+      region: 'EG'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
