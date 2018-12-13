@@ -1,0 +1,48 @@
+<mat-card class="example-card">
+
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image">
+      <mat-icon>person</mat-icon>
+    </div>
+    <mat-card-title>anonymous</mat-card-title>
+  </mat-card-header>
+
+  <!--img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
+  <mat-card-content class="basic-info">
+
+    <mat-form-field>
+      <mat-select id="type" placeholder="Request Type">
+        <mat-option *ngFor="let type of types" [value]="type.value">
+          {{type.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label style="font-weight: bold">Description</mat-label>
+      <textarea id="desc" matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+        cdkAutosizeMaxRows="5"></textarea>
+    </mat-form-field>
+
+    <div class="image-holder">
+      <mat-card-content imagecat>
+        <div class="franco">
+          <img [src]="url" class="image-holder"> <br />
+        </div>
+        <input type='file' (change)="onSelectFile($event)">
+      </mat-card-content>
+    </div>
+
+    <mat-form-field class="descatt">
+      <span matPrefix>+20 &nbsp;</span>
+      <input type="tel" matInput id="tele" placeholder="Contact Number">
+      <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
+  </mat-card-content>
+
+  <mat-card-actions class="actions">
+    <button mat-raised-button color="primary" (click)="submitRequest($event)">Request</button>
+    <button mat-button>Discard</button>
+  </mat-card-actions>
+
+</mat-card>

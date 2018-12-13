@@ -1,0 +1,36 @@
+.example-full-width {
+  width: 90%;
+}
+
+.basic-info {
+  padding: 2%;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 5%;
+  width: 90%;
+}
+
+.descatt {
+  width: 90%;
+}
+
+.imagecat {
+  width: 250px;
+  height: 250px;
+}
+
+.image-holder {
+  height: 100%;
+}
+
+.franco {
+  display: flex;
+  align-items: center;
+}
+
+.mat-card-content {
+  font-size: 1.1rem !important;
+}

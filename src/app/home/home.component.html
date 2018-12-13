@@ -1,0 +1,73 @@
+<div class="all-cards">
+  <mat-card [ngClass]="{'example-card': true, 'news-feed-card-mobile': (isHandset$ | async), 'news-feed-card-web': !(isHandset$ | async)}">
+
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>anonymous</mat-card-title>
+      <mat-card-subtitle>type</mat-card-subtitle>
+    </mat-card-header>
+
+    <!--img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
+    <mat-card-content class="basic-info">
+
+      <div class="example-full-width">
+        <div style="padding-bottom:1.5% ">
+          <mat-label style="font-weight: bold;">Description</mat-label>
+        </div>
+        <mat-card-content style="width:100%">
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+        </mat-card-content>
+      </div>
+
+      <div class="image-holder">
+        <mat-card-content imagecat>
+          <div class="franco image-trim">
+            <img [src]="url" class="image-holder"> <br />
+          </div>
+        </mat-card-content>
+      </div>
+
+      <div class="example-full-width card-bottom">
+
+        <div style="padding-bottom:1.5% ">
+          <mat-label style="font-weight: bold;">Contact Info</mat-label>
+        </div>
+        <div style="display: flex; align-items: center;">
+          <mat-card-content>
+
+            <mat-icon class="green-icon">phone</mat-icon>
+            <div style="float:right; padding: 4px 0 0 6px;">+20123456789</div>
+          </mat-card-content>
+        </div>
+        <div style="display: flex; align-items: center;">
+          <mat-card-content>
+            <mat-icon class="blue-icon">mail</mat-icon>
+            <div style="float:right; padding: 4px 0 0 6px;">test@test.com</div>
+          </mat-card-content>
+
+        </div>
+        <div style="display: flex; align-items: center;">
+          <mat-card-content>
+            <mat-icon href="#" class="red-icon">location_on</mat-icon>
+            <div style="float:right; padding: 6px 0 0 4px;">Get Directions</div>
+          </mat-card-content>
+
+        </div>
+        <button mat-button style="margin-left:auto;width: 48px;" matTooltip="Upvote" matTooltipPosition="below">
+          <mat-icon>arrow_upward</mat-icon> 150
+        </button>
+        <!-- Ups-->
+        <mat-card-content style="float:right;">
+
+        </mat-card-content>
+      </div>
+
+    </mat-card-content>
+
+
+  </mat-card>
+</div>
