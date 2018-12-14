@@ -10,7 +10,7 @@ import { FirebaseUIModule, firebase, firebaseui } from 'firebaseui-angular';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { MainNavComponent } from './main-nav/main-nav.component';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { LoginComponent } from './login/login.component';
 import { MaterialModule } from './material.module';
 import { LogoutComponent } from './logout/logout.component';
@@ -18,6 +18,8 @@ import { LogoutComponent } from './logout/logout.component';
 import { AgmCoreModule } from '@agm/core';
 import { HomeComponent } from './home/home.component';
 import { RequestComponent } from './request/request.component';
+import { EditComponent } from './profile/edit/edit.component';
+import { AngularFireFunctionsModule } from '@angular/fire/functions';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -43,11 +45,11 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
 @NgModule({
   declarations: [
     AppComponent,
-    MainNavComponent,
     LoginComponent,
     LogoutComponent,
     HomeComponent,
-    RequestComponent
+    RequestComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +58,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     MaterialModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireFunctionsModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCK_sAwBaNCCN3VoX73y0ocaI0ezIgxeio',
@@ -63,6 +67,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     })
   ],
   providers: [],
+  entryComponents: [RequestComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

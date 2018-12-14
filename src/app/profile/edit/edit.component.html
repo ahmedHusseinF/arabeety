@@ -1,0 +1,225 @@
+<div class="all-cards">
+  <div class="user-profile">
+    <mat-card [ngClass]="{'example-card-contact-info': true, 'news-feed-card-mobile': (isHandset$ | async), 'news-feed-card-web': !(isHandset$ | async)}">
+      <div class="profile-contents">
+        <mat-card-content class="contact-info">
+          <div class="profile-divider">
+            <div class="profile-data">
+              <div style="margin-left: 14%">
+                <img mat-card-image src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                  alt="profile-avatar" class="image-holder">
+              </div>
+
+              <mat-form-field class="example-full-width" style="margin-left: 14%">
+                <input matInput placeholder="User Name" value="Ahmed Aly">
+              </mat-form-field>
+
+              <div style="padding-bottom:1.5% ">
+              </div>
+              <div style="display: flex; align-items: center;">
+                <mat-card-content>
+
+                  <mat-icon class="green-icon">phone</mat-icon>
+                  <mat-form-field class="example-full-width" style="float:right; padding: 6px 0 0 6px">
+                    <input matInput placeholder="Contact Number" value="+20123456789">
+                  </mat-form-field>
+                </mat-card-content>
+              </div>
+              <div style="display: flex; align-items: center;">
+                <mat-card-content>
+                  <mat-icon class="blue-icon">mail</mat-icon>
+                  <mat-form-field class="example-full-width" style="float:right; padding: 6px 0 0 6px">
+                    <input matInput placeholder="Email Address" value="test@domain.ex">
+                  </mat-form-field>
+                </mat-card-content>
+
+              </div>
+
+              <div>
+
+                <mat-card-content style="display:flex; flex-direction: row-reverse">
+                  <button mat-raised-button color="primary">Save</button>
+                  <button mat-button color="primary">Discard</button>
+                </mat-card-content>
+
+              </div>
+
+
+
+              <!-- Ups-->
+
+            </div>
+            <div class="profile-right">
+              <div class="profile-belongings">
+                <mat-card [ngClass]="{'example-card-belongings': true, 'news-feed-card-mobile': (isHandset$ | async), 'news-feed-card-web': !(isHandset$ | async)}">
+
+                  <mat-card-content class="example-card-belongings">
+
+
+                    <mat-label style="font-weight: bold;">Personal Belongings</mat-label>
+
+                    <hr style=" color: black; height:1px">
+
+                    <div style="display: flex; margin-top: 3%">
+
+                      <div style="width:33%">
+                        <mat-form-field style="margin-left: 5%;">
+                          <mat-select id="type" placeholder="Belongings">
+                            <mat-option *ngFor="let food of foods" [value]="food.value">
+                              {{food.viewValue}}
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+
+                      <div style="width:50%">
+                        <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Value" style="width: 100%">
+                        </mat-form-field>
+                      </div>
+
+                      <div style="width: 17%">
+                        <button mat-flat-button color="primary">Add</button>
+                      </div>
+                    </div>
+
+                    <!--TODO: Display All Belongings-->
+
+                  </mat-card-content>
+
+                </mat-card>
+              </div>
+              <div class="profile-belongings">
+                <mat-card [ngClass]="{'example-card-belongings': true, 'news-feed-card-mobile': (isHandset$ | async), 'news-feed-card-web': !(isHandset$ | async)}">
+
+                  <mat-label style="font-weight: bold;">My Connections</mat-label>
+
+                  <hr style=" color: black; height:1px">
+
+                  <div class="all-connectors" style="display: flex; flex-wrap: wrap   ">
+                    <div class="connector">
+                      <mat-card-content class="example-card-belongings">
+                        <div>
+                          <img mat-card-image src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                            alt="profile-avatar" class="image-holder" style="max-width: 128px; max-height:128px; margin-left: 0.2%">
+                        </div>
+
+                        <div class="user-data">
+                          <p style="font-weight: bold">Ahmed Salah Aly</p>
+                        </div>
+
+                        <div style="padding-bottom:1.5% ">
+                        </div>
+
+                        <!-- Ups-->
+                      </mat-card-content>
+                    </div>
+
+                    <div class="connector">
+                      <mat-card-content class="example-card-belongings">
+                        <div>
+                          <img mat-card-image src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                            alt="profile-avatar" class="image-holder" style="max-width: 128px; max-height:128px; margin-left: 0.2%">
+                        </div>
+
+                        <div class="user-data">
+                          <p style="font-weight: bold">Ahmed Salah Aly</p>
+                        </div>
+
+                        <div style="padding-bottom:1.5% ">
+                        </div>
+
+                        <!-- Ups-->
+                      </mat-card-content>
+                    </div>
+                    <div class="connector">
+                      <mat-card-content class="example-card-belongings">
+                        <div>
+                          <img mat-card-image src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                            alt="profile-avatar" class="image-holder" style="max-width: 128px; max-height:128px; margin-left: 0.2%">
+                        </div>
+
+                        <div class="user-data">
+                          <p style="font-weight: bold">Ahmed Salah Aly</p>
+                        </div>
+
+                        <div style="padding-bottom:1.5% ">
+                        </div>
+
+                        <!-- Ups-->
+                      </mat-card-content>
+                    </div>
+                    <div class="connector">
+                      <mat-card-content class="example-card-belongings">
+                        <div>
+                          <img mat-card-image src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                            alt="profile-avatar" class="image-holder" style="max-width: 128px; max-height:128px; margin-left: 0.2%">
+                        </div>
+
+                        <div class="user-data">
+                          <p style="font-weight: bold">Ahmed Salah Aly</p>
+                        </div>
+
+                        <div style="padding-bottom:1.5% ">
+                        </div>
+
+                        <!-- Ups-->
+                      </mat-card-content>
+                    </div>
+
+                    <div class="connector" style="padding: 3%">
+                      <mat-card-content class="example-card-belongings">
+                        <div>
+                          <img mat-card-image src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                            alt="profile-avatar" class="image-holder" style="max-width: 128px; max-height:128px; margin-left: 0.2%">
+                        </div>
+
+                        <div class="user-data">
+                          <p style="font-weight: bold">Ahmed Salah Aly</p>
+                        </div>
+
+                        <div style="padding-bottom:1.5% ">
+                        </div>
+
+                        <!-- Ups-->
+                      </mat-card-content>
+                    </div>
+
+                    <div class="connector">
+                      <mat-card-content class="example-card-belongings">
+                        <div>
+                          <img mat-card-image src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                            alt="profile-avatar" class="image-holder" style="max-width: 128px; max-height:128px; margin-left: 0.2%">
+                        </div>
+
+                        <div class="user-data">
+                          <p style="font-weight: bold">Ahmed Salah Aly</p>
+                        </div>
+
+                        <div style="padding-bottom:1.5% ">
+                        </div>
+
+                        <!-- Ups-->
+                      </mat-card-content>
+                    </div>
+
+
+
+                  </div>
+
+
+                </mat-card>
+              </div>
+            </div>
+
+          </div>
+        </mat-card-content>
+
+      </div>
+
+    </mat-card>
+
+
+  </div>
+
+</div>

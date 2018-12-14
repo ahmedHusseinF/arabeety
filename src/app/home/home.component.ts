@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
+import { AngularFirestore } from '@angular/fire/firestore';
 export interface Type {
   value: string;
   viewValue: string;
@@ -28,7 +28,10 @@ export class HomeComponent implements OnInit {
 
   url = 'https://www.eagles.org/wp-content/uploads/2015/01/post21.jpg';
 
-  constructor(private breaker: BreakpointObserver) {}
+  constructor(
+    private breaker: BreakpointObserver,
+    private afFirestore: AngularFirestore
+  ) {}
 
   ngOnInit() {}
 

@@ -5,7 +5,12 @@
 .basic-info {
   padding: 2%;
 }
-
+.example-card-header {
+  background-color: #f5f6f7;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.5), 0 1px 1px 0 rgba(0, 0, 0, 0.5),
+    0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  margin: 10px auto 10px auto;
+}
 .actions {
   display: flex;
   flex-direction: row-reverse;
@@ -13,24 +18,50 @@
   width: 90%;
 }
 
+.big-modal-mobile {
+  width: 100% !important;
+}
+.big-modal-web {
+  width: 60% !important;
+}
+
 .descatt {
   width: 90%;
 }
 
 .imagecat {
-  width: 250px;
-  height: 250px;
 }
 
 .image-holder {
-  height: 100%;
+  max-width: 100%;
+}
+
+.image-trim {
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.Request-Header {
+  background-color: ghostwhite;
 }
 
 .franco {
+  height: 250px;
   display: flex;
   align-items: center;
 }
 
 .mat-card-content {
   font-size: 1.1rem !important;
+}
+
+.example-header-image {
+  background-image: url('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png');
+  background-size: cover;
+}
+
+.modal-body {
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
+  width: 100%;
 }
