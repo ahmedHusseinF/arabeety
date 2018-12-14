@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
+import { FormGroup } from '@angular/forms';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
@@ -51,19 +52,27 @@ export class RequestComponent implements OnInit {
     ) as HTMLInputElement;
 
     // TODO: delete logging and send as an object
-
     const data = {
       requestType: type.textContent.trim(),
-      description: desc.textContent.trim(),
-      mobile: tele.textContent.trim(),
-      createdAt: Date.now(),
-      userLocation: { lat: 0, lng: 0 }
+      description: desc.value.trim(),
+      mobile: tele.value.trim(),
+      createdAt: Date.now()
     };
 
-    console.log({ data });
+    navigator.geolocation.getCurrentPosition(
+      pos => {
+        const loc = { lat: pos.coords.latitude, lng: pos.coords.longitude };
 
-    const remoteFn = this.afFunctions.httpsCallable('respondToRequest');
-    remoteFn(data);
+        data['userLocation'] = loc;
+
+        const remoteFn = this.afFunctions.httpsCallable('respondToRequest');
+        remoteFn(data);
+      },
+      _ => {},
+      { enableHighAccuracy: true }
+    );
+
+    console.log({ data });
   }
 
   onSelectFile(event) {
